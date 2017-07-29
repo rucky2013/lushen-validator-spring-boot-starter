@@ -11,28 +11,28 @@ lushen-validator-spring-boot-starter
         
         2，导入maven配置：
                 
-				<dependency>
-					<groupId>org.lushen.zhuifeng</groupId>
-					<artifactId>lushen-validator-spring-boot-starter</artifactId>
-					<version>0.0.1-SNAPSHOT</version>
-				</dependency>
+		<dependency>
+			<groupId>org.lushen.zhuifeng</groupId>
+			<artifactId>lushen-validator-spring-boot-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
                 
         3，classpath下新增validator.properties，如：
-                
-				user.login.username.null=用户名不能为空
-				user.login.password.null=密码不能为空
+ 
+		user.login.username.null=用户名不能为空
+		user.login.password.null=密码不能为空
         
         4，基于SpringBoot接口参数：
         
-				public class VoLoginParameter implements VoParameter {
-				
-					@NotBlank(message="{user.login.username.null}")
-					private String username;
-					
-					@NotBlank(message="{user.login.password.null}")
-					private String password;
-				           
-				}
+		public class VoLoginParameter implements VoParameter {
+
+			@NotBlank(message="{user.login.username.null}")
+			private String username;
+
+			@NotBlank(message="{user.login.password.null}")
+			private String password;
+
+		}
                 
         5，基于SpringBoot接口：
         
@@ -50,19 +50,19 @@ lushen-validator-spring-boot-starter
                                                               
 ### 可配置项
 
-		lushen.validator.enabled (是否开启，默认true)
-		lushen.validator.errcode (验证不通过错误码，默认400)
-		lushen.validator.msg (验证不通过错误信息，默认‘请求参数错误’)
-		lushen.validator.encoding (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.alwaysUseMessageFormat (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.basenames (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.cacheMillis (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.cacheSeconds (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.concurrentRefresh (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.fallbackToSystemLocale (ReloadableResourceBundleMessageSource配置)
-		lushen.validator.useCodeAsDefaultMessage (ReloadableResourceBundleMessageSource配置)
+	lushen.validator.enabled                     //是否开启，默认true
+	lushen.validator.errcode                     //验证不通过错误码，默认400
+	lushen.validator.msg                         //验证不通过错误信息，默认‘请求参数错误’
+	lushen.validator.encoding                    //ReloadableResourceBundleMessageSource配置
+	lushen.validator.alwaysUseMessageFormat      //ReloadableResourceBundleMessageSource配置
+	lushen.validator.basenames                   //ReloadableResourceBundleMessageSource配置
+	lushen.validator.cacheMillis                 //ReloadableResourceBundleMessageSource配置
+	lushen.validator.cacheSeconds                //ReloadableResourceBundleMessageSource配置
+	lushen.validator.concurrentRefresh           //ReloadableResourceBundleMessageSource配置
+	lushen.validator.fallbackToSystemLocale      //ReloadableResourceBundleMessageSource配置
+	lushen.validator.useCodeAsDefaultMessage     //ReloadableResourceBundleMessageSource配置
 
 ### 关于验证信息
 
-		除了使用properties文件以外，还可以实现ValidatorMessageLoader接口，并注册为Spring Bean，启动的时候会从中加载验证配置信息
+        除了使用properties文件以外，还可以实现ValidatorMessageLoader接口，并注册为Spring Bean，启动的时候会从中加载验证配置信息
         
