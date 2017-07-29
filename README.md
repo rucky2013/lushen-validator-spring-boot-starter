@@ -50,17 +50,17 @@ lushen-validator-spring-boot-starter
                                                               
 可配置项
 
-        boolean         lushen.validator.enabled                           是否开启，默认true
-        String          lushen.validator.encoding                          编码，默认UTF-8
-        int             lushen.validator.errcode                           验证不通过错误码，默认400
-        String          lushen.validator.msg                               验证不通过错误信息，默认‘请求参数错误’
-        boolean         lushen.validator.alwaysUseMessageFormat            ReloadableResourceBundleMessageSource配置
-        String[]        lushen.validator.basenames                         ReloadableResourceBundleMessageSource配置
-        long            lushen.validator.cacheMillis                       ReloadableResourceBundleMessageSource配置
-        int             lushen.validator.cacheSeconds                      ReloadableResourceBundleMessageSource配置
-        boolean         lushen.validator.concurrentRefresh                 ReloadableResourceBundleMessageSource配置
-        boolean         lushen.validator.fallbackToSystemLocale            ReloadableResourceBundleMessageSource配置
-        boolean         lushen.validator.useCodeAsDefaultMessage           ReloadableResourceBundleMessageSource配置
+        lushen.validator.enabled                     //是否开启，默认true
+        lushen.validator.errcode                     //验证不通过错误码，默认400
+        lushen.validator.msg                         //验证不通过错误信息，默认‘请求参数错误’
+        lushen.validator.encoding                    //ReloadableResourceBundleMessageSource配置
+        lushen.validator.alwaysUseMessageFormat      //ReloadableResourceBundleMessageSource配置
+        lushen.validator.basenames                   //ReloadableResourceBundleMessageSource配置
+        lushen.validator.cacheMillis                 //ReloadableResourceBundleMessageSource配置
+        lushen.validator.cacheSeconds                //ReloadableResourceBundleMessageSource配置
+        lushen.validator.concurrentRefresh           //ReloadableResourceBundleMessageSource配置
+        lushen.validator.fallbackToSystemLocale      //ReloadableResourceBundleMessageSource配置
+        lushen.validator.useCodeAsDefaultMessage     //ReloadableResourceBundleMessageSource配置
 
 关于验证信息
 
