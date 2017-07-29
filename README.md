@@ -1,6 +1,6 @@
 # lushen-spring-boot-starter
 
-		JSR349封装
+Springboot JSR349定制
 
 ### 关于本项目
 
