@@ -1,0 +1,6 @@
+
+# lushen validator auto configure
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.lushen.zhuifeng.springboot.validator.ValidatorAutoConfiguration,\
+org.lushen.zhuifeng.springboot.validator.ValidatorBindExceptionResolver
