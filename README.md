@@ -11,28 +11,28 @@ lushen-validator-spring-boot-starter
         
         2，导入maven配置：
                 
-                <dependency>
-                        <groupId>org.lushen.zhuifeng</groupId>
+		<dependency>
+			<groupId>org.lushen.zhuifeng</groupId>
 			<artifactId>lushen-validator-spring-boot-starter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
                 
         3，classpath下新增validator.properties，如：
-                
-                user.login.username.null=用户名不能为空
-                user.login.password.null=密码不能为空
+ 
+		user.login.username.null=用户名不能为空
+		user.login.password.null=密码不能为空
         
         4，基于SpringBoot接口参数：
         
-                public class VoLoginParameter implements VoParameter {
+		public class VoLoginParameter implements VoParameter {
 
-                        @NotBlank(message="{user.login.username.null}")
-                        private String username;
-	
-	                @NotBlank(message="{user.login.password.null}")
-	                private String password;
-                
-                }
+			@NotBlank(message="{user.login.username.null}")
+			private String username;
+
+			@NotBlank(message="{user.login.password.null}")
+			private String password;
+
+		}
                 
         5，基于SpringBoot接口：
         
