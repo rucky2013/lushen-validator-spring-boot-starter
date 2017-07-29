@@ -1,5 +1,6 @@
 # lushen-spring-boot-starter
-lushen-validator-spring-boot-starter
+
+		JSR349封装
 
 ### 关于本项目
 
