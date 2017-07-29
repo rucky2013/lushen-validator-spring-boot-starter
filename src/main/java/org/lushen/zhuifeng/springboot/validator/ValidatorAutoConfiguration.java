@@ -98,7 +98,7 @@ public class ValidatorAutoConfiguration {
 		
 		ReloadableResourceBundleMessageSource bundleMessageSource = new ReloadableResourceBundleMessageSource();
 		bundleMessageSource.setCommonMessages(properties);
-		bundleMessageSource.setDefaultEncoding(this.properties.getDefaultEncoding());
+		bundleMessageSource.setDefaultEncoding(this.properties.getEncoding());
 		bundleMessageSource.setAlwaysUseMessageFormat(this.properties.isAlwaysUseMessageFormat());
 		bundleMessageSource.setBasenames(this.properties.getBasenames());
 		bundleMessageSource.setCacheMillis(this.properties.getCacheMillis());

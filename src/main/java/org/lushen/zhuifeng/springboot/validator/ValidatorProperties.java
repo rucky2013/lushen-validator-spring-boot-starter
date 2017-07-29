@@ -34,7 +34,7 @@ public class ValidatorProperties implements InitializingBean {
 	
 	private boolean enabled;
 	
-	private String defaultEncoding = DEFAULT_CHARSET;
+	private String encoding = DEFAULT_CHARSET;
 	
 	private int errcode = DEFAULT_ERRCODE;
 	
@@ -62,12 +62,12 @@ public class ValidatorProperties implements InitializingBean {
 		this.enabled = enabled;
 	}
 
-	public String getDefaultEncoding() {
-		return defaultEncoding;
+	public String getEncoding() {
+		return encoding;
 	}
 
-	public void setDefaultEncoding(String defaultEncoding) {
-		this.defaultEncoding = defaultEncoding;
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
 	}
 
 	public boolean isAlwaysUseMessageFormat() {
