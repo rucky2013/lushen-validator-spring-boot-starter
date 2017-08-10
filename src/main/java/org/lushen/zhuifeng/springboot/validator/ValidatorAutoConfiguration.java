@@ -65,7 +65,7 @@ public class ValidatorAutoConfiguration {
 		
 		LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
 		localValidatorFactoryBean.setValidationMessageSource(bundleMessageSource());
-		localValidatorFactoryBean.setProviderClass(this.properties.isFailFast()? FailFastHibernateValidator.class:HibernateValidator.class);
+		localValidatorFactoryBean.setProviderClass(HibernateValidator.class);
 		
 		return localValidatorFactoryBean;
 	}
