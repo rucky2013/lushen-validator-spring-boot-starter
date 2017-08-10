@@ -54,6 +54,7 @@ Springboot JSR349定制
 	lushen.validator.enabled                     //是否开启，默认true
 	lushen.validator.errcode                     //验证不通过错误码，默认400
 	lushen.validator.msg                         //验证不通过错误信息，默认‘请求参数错误’
+	lushen.validator.failFast							//快速失败？默认false
 	lushen.validator.encoding                    //ReloadableResourceBundleMessageSource配置
 	lushen.validator.alwaysUseMessageFormat      //ReloadableResourceBundleMessageSource配置
 	lushen.validator.basenames                   //ReloadableResourceBundleMessageSource配置

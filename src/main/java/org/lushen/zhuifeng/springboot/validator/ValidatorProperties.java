@@ -53,6 +53,8 @@ public class ValidatorProperties implements InitializingBean {
 	private boolean fallbackToSystemLocale = true;
 	
 	private boolean useCodeAsDefaultMessage = false;
+	
+	private boolean failFast = false;
 
 	public boolean isEnabled() {
 		return enabled;
@@ -60,6 +62,14 @@ public class ValidatorProperties implements InitializingBean {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public boolean isFailFast() {
+		return failFast;
+	}
+
+	public void setFailFast(boolean failFast) {
+		this.failFast = failFast;
 	}
 
 	public String getEncoding() {
