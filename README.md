@@ -48,8 +48,8 @@ Springboot JSR349定制
                 
                 {"errcode":400,"msg":"请求参数错误","details":[{"msg":"用户名不能为空","field":"username"},
                                                               {"msg":"密码不能为空","field":"password"}]}
-
-		7，可以覆盖配置输出信息：
+            
+   7，可以覆盖配置输出信息：
 		
 					实现org.lushen.zhuifeng.springboot.validator.BindExceptionHandler接口，并配置为bean
                                                               
