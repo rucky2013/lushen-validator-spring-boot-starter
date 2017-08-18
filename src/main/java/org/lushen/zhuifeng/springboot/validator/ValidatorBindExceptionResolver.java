@@ -2,7 +2,6 @@ package org.lushen.zhuifeng.springboot.validator;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,7 +9,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.validation.BindException;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -27,11 +25,11 @@ public class ValidatorBindExceptionResolver {
 	
 	private Log log = LogFactory.getLog(getClass());
 	
-	private ValidatorProperties properties;
+	private BindExceptionHandler bindExceptionHandler;
 	
-	public ValidatorBindExceptionResolver(ValidatorProperties properties) {
+	public ValidatorBindExceptionResolver(BindExceptionHandler bindExceptionHandler) {
 		super();
-		this.properties = properties;
+		this.bindExceptionHandler = bindExceptionHandler;
 	}
 	
 	@ExceptionHandler(BindException.class)
@@ -41,21 +39,8 @@ public class ValidatorBindExceptionResolver {
 		
 		try (PrintWriter out = response.getWriter()){
 			
-			List<FieldError> fieldErrors = bindException.getFieldErrors();
-			
-			ValidatedEchoBean echoBean = new ValidatedEchoBean(fieldErrors.size());
-			echoBean.setErrcode(this.properties.getErrcode());
-			echoBean.setMsg(this.properties.getMsg());
-			
-			for(FieldError fieldError : fieldErrors) {
-				
-				String field = fieldError.getField();
-				String msg = fieldError.getDefaultMessage();
-				
-				echoBean.addValidatedError(new ValidatedError(field, msg));
-			}
-			
-			out.write(echoBean.toJsonString());
+			String echoMsg = bindExceptionHandler.handleErrorAndHttpEcho(bindException);
+			out.write(echoMsg);
 			out.flush();
 			
 		} catch (IOException ex) {

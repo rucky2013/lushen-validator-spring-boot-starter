@@ -14,8 +14,6 @@ public interface ValidatorMessageLoader {
 	 * 
 	 * 	例如：key=user.username.null，value=用户名不能为空<br><br>
 	 * 
-	 * 	不用再封装为JSON串，验证失败信息会封装为json串返回{@link ValidatedEchoBean}
-	 * 
 	 * @return
 	 */
 	Properties loadMessages();

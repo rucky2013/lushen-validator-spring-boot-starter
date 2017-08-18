@@ -48,12 +48,14 @@ Springboot JSR349定制
                 
                 {"errcode":400,"msg":"请求参数错误","details":[{"msg":"用户名不能为空","field":"username"},
                                                               {"msg":"密码不能为空","field":"password"}]}
+
+		7，可以覆盖配置输出信息：
+		
+					实现org.lushen.zhuifeng.springboot.validator.BindExceptionHandler接口，并配置为bean
                                                               
 ### 可配置项
 
 	lushen.validator.enabled                     //是否开启，默认true
-	lushen.validator.errcode                     //验证不通过错误码，默认400
-	lushen.validator.msg                         //验证不通过错误信息，默认‘请求参数错误’
 	lushen.validator.encoding                    //ReloadableResourceBundleMessageSource配置
 	lushen.validator.alwaysUseMessageFormat      //ReloadableResourceBundleMessageSource配置
 	lushen.validator.basenames                   //ReloadableResourceBundleMessageSource配置

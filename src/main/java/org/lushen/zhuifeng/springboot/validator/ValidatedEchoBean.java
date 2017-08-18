@@ -3,8 +3,6 @@ package org.lushen.zhuifeng.springboot.validator;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.json.JSONObject;
-
 /**
  * 错误信息输出对象
  * 
@@ -39,16 +37,12 @@ public class ValidatedEchoBean {
 		this.msg = msg;
 	}
 
+	public List<ValidatedError> getDetails() {
+		return details;
+	}
+
 	public void addValidatedError(ValidatedError error) {
 		this.details.add(error);
 	}
-	
-	public String toJsonString() {
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("errcode", this.errcode);
-		jsonObject.put("msg", this.msg);
-		jsonObject.put("details", this.details);
-		return jsonObject.toString();
-	}
-	
+
 }

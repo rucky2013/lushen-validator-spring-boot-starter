@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import net.sf.json.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 /**
@@ -20,10 +20,6 @@ public class ValidatorProperties implements InitializingBean {
 	
 	private static final String[] DEFAULT_VALIDATOR_FILE = new String[]{"classpath:validator"};	//默认配置文件
 	
-	private static final int DEFAULT_ERRCODE = 400;				//默认错误码
-	
-	private static final String DEFAULT_MSG = "请求参数错误";	//默认错误信息
-	
 	private static final String DEFAULT_CHARSET = "UTF-8";		//默认编码格式
 	
 	private Log log = LogFactory.getLog(getClass());
@@ -35,10 +31,6 @@ public class ValidatorProperties implements InitializingBean {
 	private boolean enabled;
 	
 	private String encoding = DEFAULT_CHARSET;
-	
-	private int errcode = DEFAULT_ERRCODE;
-	
-	private String msg = DEFAULT_MSG;
 	
 	private boolean alwaysUseMessageFormat = false;
 	
@@ -126,26 +118,10 @@ public class ValidatorProperties implements InitializingBean {
 		this.useCodeAsDefaultMessage = useCodeAsDefaultMessage;
 	}
 
-	public int getErrcode() {
-		return errcode;
-	}
-
-	public void setErrcode(int errcode) {
-		this.errcode = errcode;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		
-		log.info("properties :: " + JSONObject.fromObject(this).toString());
+		log.info("properties :: " + new ObjectMapper().writeValueAsString(this));
 	
 	}
 

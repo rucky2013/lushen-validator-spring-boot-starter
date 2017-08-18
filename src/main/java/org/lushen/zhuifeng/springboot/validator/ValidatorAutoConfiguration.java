@@ -109,5 +109,14 @@ public class ValidatorAutoConfiguration {
 		
 		return bundleMessageSource;
 	}
+	
+	/**
+	 * 异常信息输出处理
+	 */
+	@Bean
+	@ConditionalOnMissingBean
+	public BindExceptionHandler bindExceptionHandler() {
+		return new DefaultBindExceptionHandler();
+	}
 
 }
