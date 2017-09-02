@@ -4,7 +4,8 @@ Springboot JSR349定制
 
 ### 关于本项目
 
-        本项目基于springboot-web的JSR349验证，进行定制化输出json格式验证错误信息，去除需要写BindResult到Controller方法参数的繁琐
+        本项目基于springboot-web的JSR349验证，进行定制化输出json格式验证错误信息，去除需要写BindResult到Controller方法参数的繁琐。本项目用于学习springboot的自动化加载配置。
+	
         
 ### 如何使用
 
